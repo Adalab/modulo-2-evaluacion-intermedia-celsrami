@@ -1,9 +1,5 @@
 'Use strict'
 
-console.log('holi');
-
-
-
 // Constantes y variables
 
 const input = document.querySelector('.js-input');
@@ -13,20 +9,53 @@ const paragraphAttempts = document.querySelector('.js-attempts');
 
 
 
-// funciones
+// Función número aleatorio
+
 function getRandomNumber(max) {
  return Math.ceil(Math.random() * max);
- 
 }
 
-console.log(getRandomNumber(100));
+const number = getRandomNumber(100);
+console.log(number);
+
+
 
 function handleClik (event) {
-   event.default;
+   event.preventDefault;
     clue();
-    numberAttempts();
-
+   numberAttempts();
 }
+
+// función pista
+ 
+const clue = () => {
+ const valueInput = parseInt(input.value);  
+  if ( valueInput > number ) {
+  paragraphClue.innerHTML = "Demasiado alto";
+}
+
+else if ( valueInput < number  ) {
+  paragraphClue.innerHTML = "Demasiado bajo";
+}
+
+else if ( valueInput === number) {
+  paragraphClue.innerHTML = "Has ganado campeona";
+}
+
+else {
+ paragraphClue.innerHTML = "El número debe estar entre 1 y 100";
+}
+};
+
+// Función contador de intentos
+
+let counter = 0;
+
+const numberAttempts = () => {
+  counter++
+  console.log(counter);
+   paragraphAttempts.innerHTML =  `Números de intentos: ${counter}`;
+};
 
 
 

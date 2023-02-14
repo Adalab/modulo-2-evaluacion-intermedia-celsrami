@@ -28,4 +28,5 @@
 .paragraph {
     border: solid 4px gainsboro;
     padding: 5px;
+    width: 300px;
 }
