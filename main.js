@@ -16,14 +16,14 @@ function getRandomNumber(max) {
 }
 
 const number = getRandomNumber(100);
-console.log(number);
+console.log(`Mi número aleatorio es ${number}`);
 
 
 
 function handleClik (event) {
    event.preventDefault;
-    clue();
-   numberAttempts();
+  clue();
+  numberAttempts();
 }
 
 // función pista
