@@ -1,6 +1,6 @@
 'Use strict'
 
-// Constantes y variables
+// constants and variables
 
 const input = document.querySelector('.js-input');
 const button = document.querySelector('.js-button');
@@ -9,10 +9,10 @@ const paragraphAttempts = document.querySelector('.js-attempts');
 
 
 
-// Función número aleatorio
+// function random number
 
 function getRandomNumber(max) {
- return Math.ceil(Math.random() * max);
+  return Math.ceil(Math.random() * max);
 }
 
 const number = getRandomNumber(100);
@@ -20,45 +20,55 @@ console.log(`Mi número aleatorio es ${number}`);
 
 
 
-function handleClik (event) {
-   event.preventDefault;
+function handleClik(event) {
+  event.preventDefault();
   clue();
   numberAttempts();
 }
 
-// función pista
- 
+// track function
+const paintmsj = (msj) => {
+  paragraphClue.innerHTML = msj;
+}
+
+
+
 const clue = () => {
- const valueInput = parseInt(input.value);  
-  if ( valueInput > number ) {
-  paragraphClue.innerHTML = "Demasiado alto";
-}
+  const valueInput = parseInt(input.value);
 
-else if ( valueInput < number  ) {
-  paragraphClue.innerHTML = "Demasiado bajo";
-}
+  if (isNaN(valueInput)) {
+    paintmsj("Debe introducir un número");
+  }
 
-else if ( valueInput === number) {
-  paragraphClue.innerHTML = "Has ganado campeona";
-}
+  else if (valueInput < 1 || valueInput > 100) {
+    paintmsj("El número debe estar entre 1 y 100");
+  }
 
-else {
- paragraphClue.innerHTML = "El número debe estar entre 1 y 100";
-}
+  else if (valueInput > number) {
+    paintmsj("Demasiado alto");
+  }
+
+  else if (valueInput < number) {
+    paintmsj("Demasiado bajo");
+  }
+
+  else {
+    paintmsj("Has ganado campeona");
+  }
 };
 
-// Función contador de intentos
+// counter function
 
 let counter = 0;
 
 const numberAttempts = () => {
   counter++
   console.log(counter);
-   paragraphAttempts.innerHTML =  `Números de intentos: ${counter}`;
+  paragraphAttempts.innerHTML = `Números de intentos: ${counter}`;
 };
 
 
 
-// Eventos
+// Events
 
-button.addEventListener('click', handleClik );
+button.addEventListener('click', handleClik);

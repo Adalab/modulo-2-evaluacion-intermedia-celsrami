@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>¿Adivinas el número?</title>
-</head>
-<body>
-
-<header></header>
-<main>
-    <h1 class="title js-title">Adivina el número</h1>
-    <section class="section">
-        <label class="label js-label">Introduce aquí tu número:</label>
-        <input type="number" class="js-input input" value="">
-        <button id="clicks" type="button" class="js-button button">Prueba</button>
-    </section>
-    <p class="js-clue paragraph">Pista: Escribe el número y dale a Prueba</p>
-    <p class="js-attempts paragraph">Número de intentos: 0</p>
-    
-</main>
-<footer></footer>
+  </head>
+  <body>
+    <header></header>
+    <main class="main">
+      <h1 class="title js-title">Adivina el número</h1>
+      <form class="form">
+        <label for="number" class="label js-label"
+          >Introduce aquí tu número:</label
+        >
+        <input id="number" type="number" class="js-input input" />
+        <button id="clicks" type="button" class="js-button button">
+          Prueba
+        </button>
+      </form>
+      <p class="js-clue paragraph">Pista: Escribe el número y dale a Prueba</p>
+      <p class="js-attempts paragraph">Número de intentos: 0</p>
+    </main>
+    <footer></footer>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
